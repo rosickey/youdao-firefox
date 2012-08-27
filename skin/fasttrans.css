@@ -1,0 +1,10 @@
+@import url(chrome://global/skin/);
+#fasttransresult{
+padding:6px;
+}
+#htop{
+margin-bottom:3px;
+}
+#buttonreplace{
+min-width:40px;
+}

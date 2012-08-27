@@ -1,0 +1,7 @@
+content	fasttrans	content/
+overlay	chrome://browser/content/browser.xul	chrome://fasttrans/content/fasttrans.xul
+
+locale	fasttrans	en-US	locale/en-US/
+locale	fasttrans	pl-PL	locale/pl-PL/
+
+skin	fasttrans	classic/1.0	skin/
