@@ -23,7 +23,7 @@
 		<button id="buttontranslate" label="&trans;" accesskey="t" oncommand="fasttransk.translate();" />
 		<spacer flex="1" />
 		<button label="&set;" accesskey="s" oncommand="fasttransk.openprefs();" />
-		<button label="记录" accesskey="m" oncommand="fasttransk.record();" />
+		<button label="&wordbook;" accesskey="m" oncommand="fasttransk.record();" />
 	</hbox>
 
 	<hbox id="voiceb" style="padding:2px;height:15px;width:15px">

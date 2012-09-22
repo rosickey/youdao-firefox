@@ -52,6 +52,8 @@
 	</script>
 	<checkbox id="chrealtime" label="&labelrealtime;"/>
 	<groupbox>
+		<button label="&login;" oncommand="fasttransk.login();" />
+
 		<caption label="&defset;"/>
 		<label control="lfrom" value="&transfrom;"/>
 		<menulist id="lfrom">

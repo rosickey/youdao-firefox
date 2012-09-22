@@ -4,6 +4,8 @@
 <!ENTITY trans "Translate">
 <!ENTITY set "Settings">
 <!ENTITY titset "settings">
+<!ENTITY wordbook "Record">
+<!ENTITY login "Configuration wordbook">
 <!ENTITY orgtxt "Original text:">
 <!ENTITY transtxt "Translated text:">
 <!ENTITY key "Z">

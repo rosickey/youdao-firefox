@@ -101,7 +101,7 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 	moreurl: function(){
 		var a = fasttransk.resfrom.value;
 		var win = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).getMostRecentWindow('navigator:browser');
-    		win.gBrowser.selectedTab = win.gBrowser.addTab('http://dict.youdao.com/search?q='+a);
+    	win.gBrowser.selectedTab = win.gBrowser.addTab('http://dict.youdao.com/search?q='+a);
 },
 
 	voice2: function(){
@@ -126,7 +126,17 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 		data=gtans.responseText;
 		alert(data);
 
+
 },
+
+
+	login: function(){
+		var win = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).getMostRecentWindow('navigator:browser');
+		win.gBrowser.selectedTab = win.gBrowser.addTab('http://dict.youdao.com/wordbook/wordlist?keyfrom=smallpic');
+
+
+},
+
 
 	translate: function() {
 		if(fasttransk.resfrom.value.length!=0) {
