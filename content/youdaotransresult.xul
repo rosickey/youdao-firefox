@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://youdaotrans/skin/youdaotrans.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://youdaotrans/locale/youdaotrans.dtd">
+<window id="fasttransresult" title="Youdao translation"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+		onload="fasttransk.resultload();" 
+		onunload="fasttransk.resultclose();" 
+		>
+	<script src="youdaotrans.js" />
+	<hbox align="center" id="htop">
+		<label control="lfrom" value="&transfrom;"/>
+		<menulist id="lfrom">
+		  <menupopup>
+		  </menupopup>
+		</menulist>
+		<button id="buttonreplace" label="&lt;-&gt;" oncommand="fasttransk.replace();" />
+		<label control="lto" value="&transto;"/>
+		<menulist id="lto">
+		  <menupopup>
+		  </menupopup>
+		</menulist>
+		<button id="buttontranslate" label="&trans;" accesskey="t" oncommand="fasttransk.translate();" />
+		<spacer flex="1" />
+		<button label="&set;" accesskey="s" oncommand="fasttransk.openprefs();" />
+		<button label="记录" accesskey="m" oncommand="fasttransk.record();" />
+	</hbox>
+
+	<hbox id="voiceb" style="padding:2px;height:15px;width:15px">
+		<label id="labfrom" value="&orgtxt;" control="resfrom" />
+		
+		
+		<html:object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="15" height="15" align="absmiddle" id="speach_flash">
+  			<html:param name="allowScriptAccess" value="sameDomain"></html:param>
+  			<html:param name="movie" value="http://cidian.youdao.com/chromeplus/voice.swf"></html:param>
+			<html:param name="loop" value="false"></html:param>
+			<html:param name="menu" value="false"></html:param>
+			<html:param name="quality" value="high"></html:param>
+			<html:param name="wmode" value="transparent"></html:param>
+			<html:param id ="pm1" name="FlashVars" value="audio=http://dict.youdao.com/speech?audio=welcome"></html:param>
+
+
+	  		<html:div id = "pm2">
+	  			<html:embed  wmode="transparent" src="http://cidian.youdao.com/chromeplus/voice.swf" loop="false" menu="false" quality="high" bgcolor="#ffffff" width="15" height="15" align="absmiddle" swliveconnect="true" allowscriptaccess="sameDomain" flashvars="audio=http://dict.youdao.com/speech?audio=welcome" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+				</html:embed>
+			</html:div>
+		</html:object>
+	</hbox>
+
+
+	<textbox id="resfrom" flex="1" multiline="true" rows="3" spellcheck="true" onkeypress="fasttransk.realtime(event);" />
+	<hbox>
+		<label id="labto" value="&transtxt;" control="resto" />
+		<spacer flex="1"/>
+		<label id="labinfo" />
+					<label id ="more" class="text-link" value="Read More .." onclick="fasttransk.moreurl();"/>
+	</hbox>
+
+	<textbox id="resto" flex="1" multiline="true" readonly="1" rows="3" />
+</window>

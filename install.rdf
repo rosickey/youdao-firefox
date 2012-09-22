@@ -4,13 +4,13 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>rosickey@gmail</em:id>
 	
-    <em:name>Rosickey Translation</em:name>
+    <em:name>Youdao Translation</em:name>
 	<em:description>Just select text and right-click or press ALT+Z to translate.</em:description>
 	<em:creator>Rosickey Wang</em:creator>
 	
-    <em:version>1.08</em:version>
-	<em:optionsURL>chrome://fasttrans/content/fasttransprefs.xul</em:optionsURL>
-	<em:iconURL>chrome://fasttrans/skin/128.png</em:iconURL>
+    <em:version>0.1</em:version>
+	<em:optionsURL>chrome://youdaotrans/content/youdaotransprefs.xul</em:optionsURL>
+	<em:iconURL>chrome://youdaotrans/skin/128.png</em:iconURL>
 	<em:unpack>true</em:unpack>
 	
     <!-- Firefox -->
@@ -18,7 +18,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>3.5</em:minVersion>
-        <em:maxVersion>12.0a1</em:maxVersion>
+        <em:maxVersion>15.0</em:maxVersion>
       </Description>
     </em:targetApplication>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://youdaotrans/skin/youdaotrans.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://youdaotrans/locale/youdaotrans.dtd">
+<dialog id="fasttransprefs" title="Youdao Translate &titset;"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+		onload="fasttransk.prefswin.windowload();" 
+		ondialogaccept="return fasttransk.prefswin.prefssave();">
+	<script src="youdaotrans.js" />
+	<script>
+	fasttransk.prefswin = {
+		lfrom: null,
+		lto: null,
+		windowload: function() {
+			if(fasttransk.prefs.getBoolPref("realtime")) {
+				document.getElementById("chrealtime").checked = 1;
+			} else {
+				document.getElementById("chrealtime").checked = 0;
+			}
+			fasttransk.prefswin.lfrom = document.getElementById("lfrom");
+			fasttransk.prefswin.lto = document.getElementById("lto");
+			fasttransk.prefswin.lfrom.removeAllItems();
+			fasttransk.prefswin.lto.removeAllItems();
+			var j=0;
+			for(var i in fasttransk.langs) {
+				fasttransk.prefswin.lfrom.appendItem(fasttransk.langs[i],i);
+				fasttransk.prefswin.lto.appendItem(fasttransk.langs[i],i);
+				if(fasttransk.prefs.getCharPref("langfrom")==i) {
+					fasttransk.prefswin.lfrom.selectedIndex=j;
+				} else if(fasttransk.prefs.getCharPref("langto")==i) {
+					fasttransk.prefswin.lto.selectedIndex=j;
+				}
+				j++;
+			}
+		},
+		prefssave: function() {
+			if(document.getElementById("chrealtime").checked){
+				fasttransk.prefs.setBoolPref("realtime",true);
+			} else {
+				fasttransk.prefs.setBoolPref("realtime",false);
+			}
+			if(fasttransk.prefswin.lto.value == fasttransk.prefswin.lfrom.value) {
+				fasttransk.prompts.alert(window, "Fast Translate", difflang);
+				return false;
+			} else {
+				fasttransk.prefs.setCharPref("langfrom",fasttransk.prefswin.lfrom.value);
+				fasttransk.prefs.setCharPref("langto",fasttransk.prefswin.lto.value);
+				return true;
+			}
+		}
+	}
+	</script>
+	<checkbox id="chrealtime" label="&labelrealtime;"/>
+	<groupbox>
+		<caption label="&defset;"/>
+		<label control="lfrom" value="&transfrom;"/>
+		<menulist id="lfrom">
+			<menupopup>
+			</menupopup>
+		</menulist>
+		<label control="lto" value="&transto;"/>
+		<menulist id="lto">
+			<menupopup>
+			</menupopup>
+		</menulist>
+	</groupbox>
+</dialog>

@@ -1,3 +1,3 @@
-pref("extensions.fasttrans.langfrom",'en');
-pref("extensions.fasttrans.langto",'pl');
-pref("extensions.fasttrans.realtime",true);
+pref("extensions.youdaotrans.langfrom",'en');
+pref("extensions.youdaotrans.langto",'zh-CN');
+pref("extensions.youdaotrans.realtime",true);

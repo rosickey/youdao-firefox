@@ -1,0 +1,11 @@
+<!ENTITY defset "默认语言">
+<!ENTITY transfrom "原文:">
+<!ENTITY transto "译文:">
+<!ENTITY trans "翻译">
+<!ENTITY set "设置">
+<!ENTITY titset "设置">
+<!ENTITY orgtxt "原文:">
+<!ENTITY transtxt "译文:">
+<!ENTITY key "Z">
+<!ENTITY labelrealtime "实时翻译">
+

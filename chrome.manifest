@@ -1,7 +1,8 @@
-content	fasttrans	content/
-overlay	chrome://browser/content/browser.xul	chrome://fasttrans/content/fasttrans.xul
+content	youdaotrans	content/
+overlay	chrome://browser/content/browser.xul	chrome://youdaotrans/content/youdaotrans.xul
 
-locale	fasttrans	en-US	locale/en-US/
-locale	fasttrans	pl-PL	locale/pl-PL/
+locale	youdaotrans	en-US	locale/en-US/
+locale	youdaotrans	pl-PL	locale/pl-PL/
+locale	youdaotrans	zh-CN	locale/zh-CN/
 
-skin	fasttrans	classic/1.0	skin/
+skin	youdaotrans	classic/1.0	skin/

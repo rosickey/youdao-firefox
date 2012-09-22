@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://youdaotrans/skin/youdaotrans.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://youdaotrans/locale/youdaotrans.dtd">
+<overlay id="youdaotrans" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="youdaotrans.js" />
+	<popup id="contentAreaContextMenu">
+		<menuseparator id="septrans" />
+		<menuitem id="menutranslate" oncommand="fasttransk.openresult(1);" />
+	</popup>
+	<keyset id="mainKeyset">
+		<key id="ftprefsopen" key="&key;" oncommand="fasttransk.openresult(0);" modifiers="alt"/>
+	</keyset>
+</overlay>
