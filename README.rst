@@ -17,6 +17,8 @@
 
     You can use Youdao app review words by phone in any place.
 
+    You can close the browser,use this plug-ins as a Translation Software！
+
 *************
 **How to use**
 *************
@@ -42,6 +44,8 @@
 ::
     
     这是一个firefox的翻译插件（附加组件），可以实时的翻译多种语言，并且支持实时的发音。
+
+    甚至你可以关闭firefox，仅仅把这个插件作为一个实用的、简洁的、跨平台的翻译软件。
     
     同时为了便于记忆单词，将Youdao的单词本也加入到找个插件中来，可以将单词记录到单词本中。
 
