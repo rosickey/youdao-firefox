@@ -17,9 +17,9 @@
 
     You can use Youdao app review words by phone in any place.
 
-***************
+*************
 **How to use**
-***************
+*************
 
 **It is very simple** ::
     
@@ -39,7 +39,7 @@
 
 **说明** 
 =======
-  ::
+::
     
     这是一个firefox的翻译插件（附加组件），可以实时的翻译多种语言，并且支持实时的发音。
     
