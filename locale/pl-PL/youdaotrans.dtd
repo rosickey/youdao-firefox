@@ -4,6 +4,8 @@
 <!ENTITY trans "Tłumacz">
 <!ENTITY set "Ustawienia">
 <!ENTITY titset "ustawienia">
+<!ENTITY wordbook "ustawienia">
+<!ENTITY login "ustawienia">
 <!ENTITY orgtxt "Oryginalny tekst:">
 <!ENTITY transtxt "Wynik tłumaczenia:">
 <!ENTITY key "L">
