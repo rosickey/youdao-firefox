@@ -3,13 +3,13 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>rosickey@gmail</em:id>
-	
+	<em:type></em:type>
     <em:name>Youdao Translation</em:name>
 	<em:description>Just select text and right-click or press ALT+Z to translate.You can record word to Youdao wordbook,thought Youdao app you can review these words by phone in any place.You can know more things in 
 https://github.com/rosickey/youdao-firefox </em:description>
 	<em:creator>Rosickey Wang</em:creator>
 	
-    <em:version>0.1</em:version>
+    <em:version>0.2</em:version>
 	<em:optionsURL>chrome://youdaotrans/content/youdaotransprefs.xul</em:optionsURL>
 	<em:iconURL>chrome://youdaotrans/skin/128.png</em:iconURL>
 	<em:unpack>true</em:unpack>
