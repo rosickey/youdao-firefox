@@ -17,6 +17,13 @@
 			} else {
 				document.getElementById("chrealtime").checked = 0;
 			}
+
+			if(fasttransk.prefs.getBoolPref("notshowpop")) {
+				document.getElementById("notshowpop").checked = 0;
+			} else {
+				document.getElementById("notshowpop").checked = 1;
+			}
+
 			fasttransk.prefswin.lfrom = document.getElementById("lfrom");
 			fasttransk.prefswin.lto = document.getElementById("lto");
 			fasttransk.prefswin.lfrom.removeAllItems();
@@ -39,6 +46,13 @@
 			} else {
 				fasttransk.prefs.setBoolPref("realtime",false);
 			}
+
+			if(document.getElementById("notshowpop").checked){
+				fasttransk.prefs.setBoolPref("notshowpop",false);
+			} else {
+				fasttransk.prefs.setBoolPref("notshowpop",true);
+			}
+
 			if(fasttransk.prefswin.lto.value == fasttransk.prefswin.lfrom.value) {
 				fasttransk.prompts.alert(window, "Fast Translate", difflang);
 				return false;
@@ -50,7 +64,11 @@
 		}
 	}
 	</script>
+	<hbox>
 	<checkbox id="chrealtime" label="&labelrealtime;"/>
+	<spacer flex="1"/>
+	<checkbox id="notshowpop" label="&labelshowpop;"/>
+	</hbox>
 	<groupbox>
 		<button label="&login;" oncommand="fasttransk.login();" />
 

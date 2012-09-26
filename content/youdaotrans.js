@@ -295,6 +295,10 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 				menuh = true;
 			}
 		}
+		if(fasttransk.prefs.getBoolPref("notshowpop"))
+		{
+			menuh = true;
+		}
 		transmenu.setAttribute("hidden",menuh);
 		document.getElementById("septrans").setAttribute("hidden",menuh);		
 	}

@@ -8,5 +8,6 @@
 <!ENTITY login "ustawienia">
 <!ENTITY orgtxt "Oryginalny tekst:">
 <!ENTITY transtxt "Wynik tłumaczenia:">
-<!ENTITY key "L">
+<!ENTITY key "Z">
 <!ENTITY labelrealtime "Tłumacz w czasie pisania">
+<!ENTITY labelshowpop "Right-click menu">
