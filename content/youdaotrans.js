@@ -27,25 +27,50 @@ var fasttransk = {
 		var gtans = new XMLHttpRequest(); 
 		var url="http://dict.youdao.com/wordbook/ajax?action=addword&q="+a+"&date=";
 		var parameters=Date().toString();
-		gtans.open('GET', url+parameters,false);
-		//gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		//gtans.setRequestHeader("Connection", "close");
+		gtans.open('GET', url+parameters,true);
+		gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		gtans.setRequestHeader("Connection", "close");
 		gtans.send(null);
-		data=gtans.responseText;
-		data=JSON.parse(data);
-		if (data.message == "adddone")
-		{
-			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_1'));
+
+
+		gtans.onreadystatechange = function() {                     
+			if (gtans.readyState==4 && gtans.status == 200) {
+				data=gtans.responseText;
+				data=JSON.parse(data);
+				if (data.message == "adddone")
+				{
+					fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_1'));
+				}
+				if (data.message == "editdone")
+				{
+					fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_0'));
+				}
+				if (data.message == "nouser")
+				{
+					fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_nouser'));
+				}
+
+			} else if(gtans.status != 200) {
+				fasttransk.labinfo.value = fasttransk.sfrombundle('error');
+				fasttransk.afterresp();
+			}
 		}
-		if (data.message == "editdone")
-		{
-			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_0'));
-		}
-		if (data.message == "nouser")
-		{
-			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_nouser'));
-		}
-		button.disabled = 0;
+
+		// data=gtans.responseText;
+		// data=JSON.parse(data);
+		// if (data.message == "adddone")
+		// {
+		// 	fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_1'));
+		// }
+		// if (data.message == "editdone")
+		// {
+		// 	fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_0'));
+		// }
+		// if (data.message == "nouser")
+		// {
+		// 	fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_nouser'));
+		// }
+		 button.disabled = 0;
 
 
 },
