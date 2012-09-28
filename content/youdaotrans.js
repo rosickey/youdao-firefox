@@ -19,6 +19,38 @@ var fasttransk = {
 		window.openDialog("chrome://youdaotrans/content/youdaotransprefs.xul","","centerscreen");
 	},
 
+
+	record: function(){
+		var a = fasttransk.resfrom.value;
+		var button = document.getElementById("buttonrecord");
+		button.disabled=1;
+		var gtans = new XMLHttpRequest(); 
+		var url="http://dict.youdao.com/wordbook/ajax?action=addword&q="+a+"&date=";
+		var parameters=Date().toString();
+		gtans.open('GET', url+parameters,false);
+		//gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		//gtans.setRequestHeader("Connection", "close");
+		gtans.send(null);
+		data=gtans.responseText;
+		data=JSON.parse(data);
+		if (data.message == "adddone")
+		{
+			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_1'));
+		}
+		if (data.message == "editdone")
+		{
+			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_0'));
+		}
+		if (data.message == "nouser")
+		{
+			fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('wordbookstatus_nouser'));
+		}
+		button.disabled = 0;
+
+
+},
+
+
 	openresult: function(mode) {
 		if((fasttransk.selected=='')&&(mode==1)){
 			openUILink("http://translate.google.com/translate?u="+fasttransk.transurl+"&sl="+fasttransk.prefs.getCharPref("langfrom")+"&tl="+fasttransk.prefs.getCharPref("langto"));
@@ -80,9 +112,11 @@ var fasttransk = {
 		}
 		return toret;
 	},	
+
+
 	insertaudio: function(){  
-var a = fasttransk.resfrom.value;
-return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height="15" align="absmiddle" wmode="transparent" src="http://cidian.youdao.com/chromeplus/voice.swf" loop="false" menu="false" quality="high" bgcolor="#ffffff" swliveconnect="true" allowscriptaccess="sameDomain" flashvars="audio=http://dict.youdao.com/speech?audio='+a+'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></html:embed>' ;
+		var a = fasttransk.resfrom.value;
+		return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height="15" align="absmiddle" wmode="transparent" src="http://cidian.youdao.com/chromeplus/voice.swf" loop="false" menu="false" quality="high" bgcolor="#ffffff" swliveconnect="true" allowscriptaccess="sameDomain" flashvars="audio=http://dict.youdao.com/speech?audio='+a+'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></html:embed>' ;
 },
 	voice: function(){
 		var b = document.getElementById('more').onclick;
@@ -115,20 +149,6 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 		
 },
 
-	record: function(){
-		var a = fasttransk.resfrom.value;
-		var url="http://dict.youdao.com/wordbook/ajax?action=addword&q="+w+"&date=";
-		var parameters=a;
-		gtans.open('GET', url+parameters, true);
-		//gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		//gtans.setRequestHeader("Connection", "close");
-		//gtans.send(null);
-		data=gtans.responseText;
-		alert(data);
-
-
-},
-
 
 	login: function(){
 		var win = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).getMostRecentWindow('navigator:browser');
@@ -141,9 +161,9 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 	translate: function() {
 		if(fasttransk.resfrom.value.length!=0) {
 			if(fasttransk.resfrom.value.length>10000) {
-				fasttransk.prompts.alert(window, "Fast Translate", fasttransk.sfrombundle('texttoolong'));
+				fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('texttoolong'));
 			} else if (fasttransk.lfrom.value==fasttransk.lto.value) {
-				fasttransk.prompts.alert(window, "Fast Translate", fasttransk.sfrombundle('difflang'));
+				fasttransk.prompts.alert(window, "Youdao Translate", fasttransk.sfrombundle('difflang'));
 			} else {
 				var button = document.getElementById("buttontranslate");
 				button.disabled=1;
@@ -295,10 +315,10 @@ return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height=
 				menuh = true;
 			}
 		}
-		if(fasttransk.prefs.getBoolPref("notshowpop"))
-		{
-			menuh = true;
-		}
+		//if(fasttransk.prefs.getBoolPref("notshowpop"))
+		//{
+		//	menuh = true;
+		//}
 		transmenu.setAttribute("hidden",menuh);
 		document.getElementById("septrans").setAttribute("hidden",menuh);		
 	}

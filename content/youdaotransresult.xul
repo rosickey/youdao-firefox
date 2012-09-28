@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://youdaotrans/skin/youdaotrans.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://youdaotrans/locale/youdaotrans.dtd">
-<window id="fasttransresult" title="Youdao translation"
+<window id="youdaotransresult" title="Youdao translation"
         xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
 		onload="fasttransk.resultload();" 
@@ -23,7 +23,7 @@
 		<button id="buttontranslate" label="&trans;" accesskey="t" oncommand="fasttransk.translate();" />
 		<spacer flex="1" />
 		<button label="&set;" accesskey="s" oncommand="fasttransk.openprefs();" />
-		<button label="&wordbook;" accesskey="m" oncommand="fasttransk.record();" />
+		<button id="buttonrecord" label="&wordbook;" accesskey="m" oncommand="fasttransk.record();" />
 	</hbox>
 
 	<hbox id="voiceb" style="padding:2px;height:15px;width:15px">
