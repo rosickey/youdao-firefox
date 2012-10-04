@@ -39,6 +39,17 @@
 
     Download Youdao app in your phone,now you can review words in any place.
 
+*************
+**Next**
+*************
+::
+
+    1.Independent run by XULrunner as a translation software
+    
+    2.Get clipboard information
+
+    3.Turn it into a real independent software 
+
 **说明** 
 =======
 ::
@@ -65,5 +76,16 @@
     手机只需下载APP，登录之后同步就可以了。
 
 更多图片可以在这看到 https://addons.mozilla.org/en-US/firefox/addon/youdao-translation/
+
+**使用**
+=======
+
+::
+
+    1.使用XULrunner让他独立运行
+    
+    2.获取系统剪切板内容
+    
+    3.成为一个独立的字典工具
     
     
