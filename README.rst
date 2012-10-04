@@ -50,6 +50,7 @@
 
     3.Turn it into a real independent software 
 
+
 **说明** 
 =======
 ::
@@ -77,7 +78,7 @@
 
 更多图片可以在这看到 https://addons.mozilla.org/en-US/firefox/addon/youdao-translation/
 
-**使用**
+**下一步**
 =======
 
 ::
@@ -88,4 +89,11 @@
     
     3.成为一个独立的字典工具
     
+*************
+**现在**
+*************
+::
+    1.修改快捷键，便于记录和翻译
+
+    2.修改记录后的输入焦点在输入栏
     
