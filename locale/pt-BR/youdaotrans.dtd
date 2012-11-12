@@ -1,0 +1,14 @@
+<!ENTITY defset "configuração padrão">
+<!ENTITY transfrom "Original:">
+<!ENTITY transto "perguntou:">
+<!ENTITY trans "tradução">
+<!ENTITY set "estabelecer">
+<!ENTITY titset "estabelecer">
+<!ENTITY wordbook "registro">
+<!ENTITY login "Configuração wordbook">
+<!ENTITY orgtxt "Original:">
+<!ENTITY transtxt "perguntou:">
+<!ENTITY key "Z">
+<!ENTITY labelrealtime "tradução em tempo real">
+<!ENTITY labelshowpop "direito menu">
+

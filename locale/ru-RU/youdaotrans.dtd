@@ -1,0 +1,13 @@
+<!ENTITY defset "По умолчанию язык">
+<!ENTITY transfrom "Перевод с">
+<!ENTITY transto "Перевести на:">
+<!ENTITY trans "переводить">
+<!ENTITY set "Sнастройки">
+<!ENTITY titset "sнастройки">
+<!ENTITY wordbook "запись">
+<!ENTITY login "Конфигурация либрет">
+<!ENTITY orgtxt "Первоначальный текст:">
+<!ENTITY transtxt "Переведенный текст:">
+<!ENTITY key "Z">
+<!ENTITY labelrealtime "Перевести в режиме реального времени">
+<!ENTITY labelshowpop "право меню">

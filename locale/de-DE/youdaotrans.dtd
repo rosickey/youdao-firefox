@@ -1,0 +1,13 @@
+<!ENTITY defset "Standard Sprachen">
+<!ENTITY transfrom "übersetzen von:">
+<!ENTITY transto "übersetzen auf:">
+<!ENTITY trans "übersetzen">
+<!ENTITY set "Einstellungen">
+<!ENTITY titset "Einstellungen">
+<!ENTITY wordbook "Rekord">
+<!ENTITY login "Configuration wordbook">
+<!ENTITY orgtxt "Originaltext::">
+<!ENTITY transtxt "übersetzt Text:">
+<!ENTITY key "Z">
+<!ENTITY labelrealtime "Übersetzen in Echtzeit">
+<!ENTITY labelshowpop "Rechtsklick-Menü">

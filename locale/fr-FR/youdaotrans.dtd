@@ -1,0 +1,13 @@
+<!ENTITY defset "langues par défaut">
+<!ENTITY transfrom "Traduire à partir de:">
+<!ENTITY transto "Traduire en:">
+<!ENTITY trans "Traduire">
+<!ENTITY set "réglages">
+<!ENTITY titset "réglages">
+<!ENTITY wordbook "record">
+<!ENTITY login "configuration wordbook">
+<!ENTITY orgtxt "Texte original:">
+<!ENTITY transtxt "Texte traduit:">
+<!ENTITY key "Z">
+<!ENTITY labelrealtime "Traduire en temps réel">
+<!ENTITY labelshowpop "menu clic-droit">
