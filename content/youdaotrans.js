@@ -143,20 +143,20 @@ var fasttransk = {
 		var a = fasttransk.resfrom.value;
 		return '<html:embed xmlns:html="http://www.w3.org/1999/xhtml" width="15" height="15" align="absmiddle" wmode="transparent" src="http://cidian.youdao.com/chromeplus/voice.swf" loop="false" menu="false" quality="high" bgcolor="#ffffff" swliveconnect="true" allowscriptaccess="sameDomain" flashvars="audio=http://dict.youdao.com/speech?audio='+a+'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></html:embed>' ;
 },
-	voice: function(){
-		var b = document.getElementById('more').onclick;
-		alert(b)
-		var a = window.opener.fasttransk.selected;
-		var aa=document.getElementById('pm1');
-		var bb=aa.value;
-		aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
-		var cc = document.getElementById('pm1').value;
-		var dd = document.getElementById('pm2');
-		dd.innerHTML= fasttransk.insertaudio();
-		var dd = document.getElementById('pm2').innerHTML;
-		alert(a+'00'+bb+'11'+cc+'22'+dd);
-		
-},
+// 	voice: function(){
+// 		var b = document.getElementById('more').onclick;
+// 		alert(b)
+// 		var a = window.opener.fasttransk.selected;
+// 		var aa=document.getElementById('pm1');
+// 		var bb=aa.value;
+// 		aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
+// 		var cc = document.getElementById('pm1').value;
+// 		var dd = document.getElementById('pm2');
+// 		dd.innerHTML= fasttransk.insertaudio();
+// 		var dd = document.getElementById('pm2').innerHTML;
+// 		alert(a+'00'+bb+'11'+cc+'22'+dd);
+// 		
+// },
 	moreurl: function(){
 		var a = fasttransk.resfrom.value;
 		var win = Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).getMostRecentWindow('navigator:browser');
@@ -164,14 +164,17 @@ var fasttransk = {
 },
 
 	voice2: function(){
-		var b = document.getElementById('more');
-		var a = fasttransk.resfrom.value;
-		b.value = "Read moere about < "+a+" >";
-		var aa=document.getElementById('pm1');
-		aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
-		var dd = document.getElementById('pm2');
-		dd.innerHTML= fasttransk.insertaudio();
+		if (fasttransk.prefs.getBoolPref("notsound")==false){
+			var b = document.getElementById('more');
+			var a = fasttransk.resfrom.value.slice(0, 12);
+			b.value = "Read moere about < "+a+"..."+" >";
+			var aa=document.getElementById('pm1');
+			aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
+			var dd = document.getElementById('pm2');
+			dd.innerHTML= fasttransk.insertaudio();
 		
+		}
+
 },
 
 

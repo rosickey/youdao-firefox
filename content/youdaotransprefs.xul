@@ -23,6 +23,12 @@
 			} else {
 				document.getElementById("notshowpop").checked = 1;
 			}
+			
+			if(fasttransk.prefs.getBoolPref("notsound")) {
+				document.getElementById("notsound").checked = 0;
+			} else {
+				document.getElementById("notsound").checked = 1;
+			}
 
 			fasttransk.prefswin.lfrom = document.getElementById("lfrom");
 			fasttransk.prefswin.lto = document.getElementById("lto");
@@ -53,6 +59,12 @@
 				fasttransk.prefs.setBoolPref("notshowpop",true);
 			}
 
+			if(document.getElementById("notsound").checked){
+				fasttransk.prefs.setBoolPref("notsound",false);
+			} else {
+				fasttransk.prefs.setBoolPref("notsound",true);
+			}
+
 			if(fasttransk.prefswin.lto.value == fasttransk.prefswin.lfrom.value) {
 				fasttransk.prompts.alert(window, "Fast Translate", difflang);
 				return false;
@@ -68,6 +80,8 @@
 	<checkbox id="chrealtime" label="&labelrealtime;"/>
 	<spacer flex="1"/>
 	<checkbox id="notshowpop" label="&labelshowpop;"/>
+	<spacer flex="1"/>
+	<checkbox id="notsound" label="sound"/>
 	</hbox>
 	<groupbox>
 		<button label="&login;" oncommand="fasttransk.login();" />

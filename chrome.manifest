@@ -4,5 +4,10 @@ overlay	chrome://browser/content/browser.xul	chrome://youdaotrans/content/youdao
 locale	youdaotrans	en-US	locale/en-US/
 locale	youdaotrans	pl-PL	locale/pl-PL/
 locale	youdaotrans	zh-CN	locale/zh-CN/
+locale	youdaotrans	fr-FR	locale/pl-PL/
+locale	youdaotrans	pt-BR	locale/zh-CN/
+locale	youdaotrans	ru-RU	locale/pl-PL/
+locale	youdaotrans	es-ES	locale/zh-CN/
+
 
 skin	youdaotrans	classic/1.0	skin/

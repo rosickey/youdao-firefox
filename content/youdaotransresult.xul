@@ -20,10 +20,6 @@
 		  <menupopup>
 		  </menupopup>
 		</menulist>
-		<button id="buttontranslate" label="&trans;" accesskey="t" oncommand="fasttransk.translate();" />
-		<spacer flex="1" />
-		<button label="&set;" accesskey="s" oncommand="fasttransk.openprefs();" />
-		<button id="buttonrecord" label="&wordbook;" accesskey="m" oncommand="fasttransk.record();" />
 	</hbox>
 
 	<hbox id="voiceb" style="padding:2px;height:15px;width:15px">
@@ -57,4 +53,10 @@
 	</hbox>
 
 	<textbox id="resto" flex="1" multiline="true" readonly="1" rows="3" />
+		<button id="buttontranslate" style="height:50px" label="&trans;" accesskey="t" oncommand="fasttransk.translate();" />
+		<hbox>
+		<button label="&set;" accesskey="s" oncommand="fasttransk.openprefs();" />
+		<spacer flex="1" />
+		<button id="buttonrecord" label="&wordbook;" accesskey="m" oncommand="fasttransk.record();" />
+	</hbox>
 </window>
