@@ -9,7 +9,7 @@
 https://github.com/rosickey/youdao-firefox </em:description>
 	<em:creator>Rosickey Wang</em:creator>
 	
-    <em:version>0.5</em:version>
+    <em:version>1.0</em:version>
 	<em:optionsURL>chrome://youdaotrans/content/youdaotransprefs.xul</em:optionsURL>
 	<em:iconURL>chrome://youdaotrans/skin/128.png</em:iconURL>
 	<em:unpack>true</em:unpack>

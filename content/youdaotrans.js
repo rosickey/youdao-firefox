@@ -27,7 +27,7 @@ var fasttransk = {
 		var gtans = new XMLHttpRequest(); 
 		var url="http://dict.youdao.com/wordbook/ajax?action=addword&q="+a+"&date=";
 		var parameters=Date().toString();
-		gtans.open('GET', url+parameters,true);
+		gtans.open('GET', url+encodeURIComponent(parameters), true);
 		gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		gtans.setRequestHeader("Connection", "close");
 		gtans.send(null);
@@ -171,8 +171,8 @@ var fasttransk = {
 			var aa=document.getElementById('pm1');
 			aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
 			var dd = document.getElementById('pm2');
-			dd.innerHTML= fasttransk.insertaudio();
-		
+			// dd.innerHTML = fasttransk.insertaudio();
+			dd.setAttribute("flashvars", aa.value)
 		}
 
 },
@@ -321,6 +321,7 @@ var fasttransk = {
 		}
 	},
 
+
 	menuchange: function(event) {
 		var menuh = false;
 		var transmenu = document.getElementById("menutranslate");
@@ -353,3 +354,70 @@ var fasttransk = {
 }
 
 window.addEventListener("load", fasttransk.init, true);
+fasttransk.prefswin = {
+	lfrom: null,
+	lto: null,
+	windowload: function() {
+		if(fasttransk.prefs.getBoolPref("realtime")) {
+			document.getElementById("chrealtime").checked = 1;
+		} else {
+			document.getElementById("chrealtime").checked = 0;
+		}
+
+		if(fasttransk.prefs.getBoolPref("notshowpop")) {
+			document.getElementById("notshowpop").checked = 0;
+		} else {
+			document.getElementById("notshowpop").checked = 1;
+		}
+		
+		if(fasttransk.prefs.getBoolPref("notsound")) {
+			document.getElementById("notsound").checked = 0;
+		} else {
+			document.getElementById("notsound").checked = 1;
+		}
+
+		fasttransk.prefswin.lfrom = document.getElementById("lfrom");
+		fasttransk.prefswin.lto = document.getElementById("lto");
+		fasttransk.prefswin.lfrom.removeAllItems();
+		fasttransk.prefswin.lto.removeAllItems();
+		var j=0;
+		for(var i in fasttransk.langs) {
+			fasttransk.prefswin.lfrom.appendItem(fasttransk.langs[i],i);
+			fasttransk.prefswin.lto.appendItem(fasttransk.langs[i],i);
+			if(fasttransk.prefs.getCharPref("langfrom")==i) {
+				fasttransk.prefswin.lfrom.selectedIndex=j;
+			} else if(fasttransk.prefs.getCharPref("langto")==i) {
+				fasttransk.prefswin.lto.selectedIndex=j;
+			}
+			j++;
+		}
+	},
+	prefssave: function() {
+		if(document.getElementById("chrealtime").checked){
+			fasttransk.prefs.setBoolPref("realtime",true);
+		} else {
+			fasttransk.prefs.setBoolPref("realtime",false);
+		}
+
+		if(document.getElementById("notshowpop").checked){
+			fasttransk.prefs.setBoolPref("notshowpop",false);
+		} else {
+			fasttransk.prefs.setBoolPref("notshowpop",true);
+		}
+
+		if(document.getElementById("notsound").checked){
+			fasttransk.prefs.setBoolPref("notsound",false);
+		} else {
+			fasttransk.prefs.setBoolPref("notsound",true);
+		}
+
+		if(fasttransk.prefswin.lto.value == fasttransk.prefswin.lfrom.value) {
+			fasttransk.prompts.alert(window, "Fast Translate", difflang);
+			return false;
+		} else {
+			fasttransk.prefs.setCharPref("langfrom",fasttransk.prefswin.lfrom.value);
+			fasttransk.prefs.setCharPref("langto",fasttransk.prefswin.lto.value);
+			return true;
+		}
+	}
+}
