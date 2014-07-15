@@ -167,7 +167,7 @@ var fasttransk = {
 		if (fasttransk.prefs.getBoolPref("notsound")==false){
 			var b = document.getElementById('more');
 			var a = fasttransk.resfrom.value.slice(0, 12);
-			b.value = "Read moere about < "+a+"..."+" >";
+			b.value = "Read more about < "+a+"..."+" >";
 			var aa=document.getElementById('pm1');
 			aa.value = "audio=http://dict.youdao.com/speech?audio="+a;
 			var dd = document.getElementById('pm2');
