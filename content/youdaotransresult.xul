@@ -26,23 +26,10 @@
 		<label id="labfrom" value="&orgtxt;" control="resfrom" />
 		
 		
-		<html:object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="15" height="15" align="absmiddle" id="speach_flash">
-  			<html:param name="allowScriptAccess" value="sameDomain"></html:param>
-  			<html:param name="movie" value="http://cidian.youdao.com/chromeplus/voice.swf"></html:param>
-			<html:param name="loop" value="false"></html:param>
-			<html:param name="menu" value="false"></html:param>
-			<html:param name="quality" value="high"></html:param>
-			<html:param name="wmode" value="transparent"></html:param>
-			<html:param id ="pm1" name="FlashVars" value="audio=http://dict.youdao.com/speech?audio=welcome"></html:param>
-
-
-	  		<html:div id = "pm2">
-	  			<html:embed  wmode="transparent" src="http://cidian.youdao.com/chromeplus/voice.swf" loop="false" menu="false" quality="high" bgcolor="#ffffff" width="15" height="15" align="absmiddle" swliveconnect="true" allowscriptaccess="sameDomain" flashvars="audio=http://dict.youdao.com/speech?audio=welcome" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
-				</html:embed>
-			</html:div>
+		<html:object width="15" height="15" align="absmiddle" id="speach_flash" type="application/x-shockwave-flash" data="http://cidian.youdao.com/chromeplus/voice.swf" flashvars="audio=http://dict.youdao.com/speech?audio=thinking" bgcolor="#ffffff" wmode="transparent" menu="false" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" >
+  	
 		</html:object>
 	</hbox>
-
 
 	<textbox id="resfrom" flex="1" multiline="true" rows="3" spellcheck="true" onkeypress="fasttransk.realtime(event);" />
 	<hbox>
