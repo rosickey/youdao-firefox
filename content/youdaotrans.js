@@ -220,16 +220,18 @@ var fasttransk = {
 		fasttransk.voice2();
 		var gtans = new XMLHttpRequest(); 
 		var data=null;
-		var url="http://translate.google.com/translate_a/t?";
-		var parameters="client=j&text="+text+"&sl="+fasttransk.lfrom.value+"&tl="+fasttransk.lto.value;
-		gtans.open('GET', url+parameters, true);
+		// var url="http://translate.google.com/translate_a/t?";
+		var url = "http://dict.youdao.com/search?q=" + text; 
+		// var parameters="client=j&text="+text+"&sl="+fasttransk.lfrom.value+"&tl="+fasttransk.lto.value;
+		gtans.open('GET', url, true);
 		gtans.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		gtans.setRequestHeader("Connection", "close");
 		gtans.send(null);
 		gtans.onreadystatechange = function() {                     
 			if (gtans.readyState==4 && gtans.status == 200) {
 				data=gtans.responseText;
-				data=fasttransk.parseresponse(data);
+				// data=fasttransk.parseresponse(data);
+				data=data.match(/<div class="trans-container">([\s\S]*?)<\/div>/)[0].replace(/<[^>]+>/g,"").replace(/[\r\n]/g, "");
 				fasttransk.googleresp += data;
 				if(fasttransk.askarrayi<fasttransk.askarray.length-1) {
 					fasttransk.askarrayi++;
